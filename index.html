@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="style.css" type="text/css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -32,15 +32,15 @@
     <div class ="content">
     <div class = "products">
         <p id ="feature">Features</p>
-        <img src ="Cargo Pants.jpeg" class="cargopants_img image" alt ="cargopant_pic" onclick ="enlarge(this.src)">
-        <p id ="cargopants">Cargo Pants - $65</p>
-        <img src ="Cargo Shorts.jpeg" class="cargoshorts_img image" alt ="cargoshorts_pic" onclick ="enlarge(this.src)">
+        <img src ="Cargo Pants.jpeg" class="cargopants_img image" alt ="cargopant_pic" onclick ="enlarge(this.src, 'cargopants')">
+        <p id="cargopants">Cargo Pants - $65</p>
+        <img src ="Cargo Shorts.jpeg" class="cargoshorts_img image" alt ="cargoshorts_pic" onclick ="enlarge(this.src, 'cargoshorts')">
         <p id ="cargoshorts">Cargo Shorts - $55</p>
-        <img src ="Skirt.jpg" class="skirt_img image" alt ="skirt_pic" onclick ="enlarge(this.src)">
+        <img src ="Skirt.jpg" class="skirt_img image" alt ="skirt_pic" onclick ="enlarge(this.src, 'skirt')">
         <p id ="skirt">Skirt - $40</p>
-        <img src ="Rain Jacket.jpeg" class="rainjacket_img image" alt ="rainjacket_pic" onclick ="enlarge(this.src)">
+        <img src ="Rain Jacket.jpeg" class="rainjacket_img image" alt ="rainjacket_pic" onclick ="enlarge(this.src, 'rainjacket')">
         <p id ="rainjacket">Rain Jacket - $130</p>
-        <img src ="Vest.jpg" class="vest_img image" alt ="vest_pic" onclick ="enlarge(this.src)">
+        <img src ="Vest.jpg" class="vest_img image" alt ="vest_pic" onclick ="enlarge(this.src, 'vest')">
         <p id ="vest">Vest - $105</p>
     </div>
     <div class = "shop">

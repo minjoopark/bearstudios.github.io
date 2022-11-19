@@ -17,7 +17,7 @@ function link(image) {
     
 }
 
-function enlarge(image) {
+function enlarge(image, pid) {
     // console.log(event.target.src);
     expandedImage.src = image;
     // expandedImage.style.display = "flex";
@@ -25,6 +25,8 @@ function enlarge(image) {
     expandedImage.style.zIndex = "1";
     container.style.zIndex="1";
         // image.style.zIndex="-1";
+    const imglabel = $(`#${pid}`).text();
+    $("#expandedText").text(imglabel);
 }
 
 
@@ -43,7 +45,13 @@ function moveLeft() {
         expandedImage.src = image[cur-1].src;
         cur--;
     }
-
+    let label = expandedImage.src.split('/');
+    label = label[label.length - 1].split('.')[0].toLowerCase();
+    if (label.includes('%20')) {
+        label = label.split('%20').join('');
+    }
+    labeltext = $(`#${label}`).text();
+    $("#expandedText").text(labeltext);
 }
 
 function moveRight(){
@@ -54,6 +62,13 @@ function moveRight(){
         expandedImage.src = image[cur+1].src;
         cur++;
     }
+    let label = expandedImage.src.split('/');
+    label = label[label.length - 1].split('.')[0].toLowerCase();
+    if (label.includes('%20')) {
+        label = label.split('%20').join('');
+    }
+    labeltext = $(`#${label}`).text();
+    $("#expandedText").text(labeltext);
 }
 
 // for (i = 0; i < image.length; i++) {
