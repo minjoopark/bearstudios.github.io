@@ -68,6 +68,10 @@ ul {
   font-family:'Courier New', Courier, monospace
 }
 
+li:hover{
+  font-size: 18px;
+}
+
 #cargopants, #cargoshorts, #skirt, #rainjacket, #vest {
   font-size: 12px;
   align-items: center;
