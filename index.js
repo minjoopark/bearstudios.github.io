@@ -25,7 +25,6 @@ function enlarge(img, pid) {
     if (lab.includes('%20')) {
         lab = lab.split('%20').join('');
     }
-    console.log(lab);
     cur = imgs.indexOf(lab);
     expandedImage.src = img;
     // expandedImage.style.display = "flex";
@@ -51,8 +50,6 @@ function moveLeft() {
     } else {
         cur--;
     }
-    console.log(cur);
-    console.log(image[cur]);
     expandedImage.src = image[cur].src;
     let label = expandedImage.src.split('/');
     label = label[label.length - 1].split('.')[0].toLowerCase();
