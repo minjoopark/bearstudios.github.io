@@ -1,13 +1,13 @@
 var expandedImage = document.getElementById("expandedImage");
 var container = document.getElementById("container");
 var image = document.getElementsByClassName("image");
+const imgs = ['CargoPants', 'CargoShorts', 'RainJacket', 'Skirt', 'Vest'];
 var text = document.getElementById("expandedText")
 
 var left = document.getElementById("left");
 var right = document.getElementById("right");
 
-var cur =0;
-
+let cur =0;
 
 // for (i = 0; i < images.length; i++) {
 //     images[i].addEventListener("click", enlarge);
@@ -17,9 +17,17 @@ function link(image) {
     
 }
 
-function enlarge(image, pid) {
+function enlarge(img, pid) {
     // console.log(event.target.src);
-    expandedImage.src = image;
+    let lab = img.split('/');
+    lab = lab[lab.length - 1];
+    lab = lab.split('.')[0];
+    if (lab.includes('%20')) {
+        lab = lab.split('%20').join('');
+    }
+    console.log(lab);
+    cur = imgs.indexOf(lab);
+    expandedImage.src = img;
     // expandedImage.style.display = "flex";
     container.style.display ="block";
     expandedImage.style.zIndex = "1";
@@ -38,13 +46,14 @@ function closing(){
 }
 
 function moveLeft() {
-    if (cur ==0) {
-        expandedImage.src = image[11].src;
-        cur = 11;
+    if (cur === 0) {
+        cur = 4;
     } else {
-        expandedImage.src = image[cur-1].src;
         cur--;
     }
+    console.log(cur);
+    console.log(image[cur]);
+    expandedImage.src = image[cur].src;
     let label = expandedImage.src.split('/');
     label = label[label.length - 1].split('.')[0].toLowerCase();
     if (label.includes('%20')) {
@@ -55,13 +64,12 @@ function moveLeft() {
 }
 
 function moveRight(){
-    if (cur ==11) {
-        expandedImage.src = image[0].src;
+    if (cur === 4) {
         cur = 0;
     } else {
-        expandedImage.src = image[cur+1].src;
         cur++;
     }
+    expandedImage.src = image[cur].src;
     let label = expandedImage.src.split('/');
     label = label[label.length - 1].split('.')[0].toLowerCase();
     if (label.includes('%20')) {
